@@ -1,0 +1,36 @@
+.searchBar {
+  display: flex;
+  align-items: center;
+  background-color: var(--color-bg-secondary);
+  border: 2px solid var(--color-border);
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  gap: 0.75rem;
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 500px;
+}
+
+.searchBar:focus-within {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(255, 43, 43, 0.1);
+}
+
+.icon {
+  font-size: 1.2rem;
+  color: var(--color-text-secondary);
+}
+
+.input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--color-text-primary);
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.input::placeholder {
+  color: var(--color-text-secondary);
+}
