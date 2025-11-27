@@ -36,7 +36,7 @@ npm run dev
 - **Font**: Inter + Noto Sans JP (Google Fonts).
 - **Elemen Figma**: hero carousel, grid artis/album, kartu berita, tab detail artis, dsb.
 - **Responsive**: Navbar berubah menjadi hamburger setelah login, menu full-screen, tombol besar.
-- **Aksesibilitas**: tombol mempunyai label ARIA, warna kontras tinggi, dan fallback image Cloudinary.
+- **Aksesibilitas**: tombol mempunyai label ARIA, dan warna kontras tinggi.
 
 ## Data Artis yang Disertakan
 
