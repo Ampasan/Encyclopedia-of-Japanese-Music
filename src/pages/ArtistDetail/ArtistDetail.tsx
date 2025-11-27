@@ -71,6 +71,14 @@ const ArtistDetail = () => {
     }
   };
 
+  const handleRatingChange = (value: string) => {
+    const parsedValue = Number(value);
+    if (Number.isNaN(parsedValue)) return;
+    const clampedValue = Math.min(5, Math.max(0, parsedValue));
+    const roundedValue = Math.round(clampedValue * 10) / 10;
+    setReviewRating(roundedValue);
+  };
+
   const handleSubmitReview = (e: React.FormEvent) => {
     e.preventDefault();
     if (!reviewText.trim() || !id || !user) return;
@@ -265,19 +273,32 @@ const ArtistDetail = () => {
                       onChange={(e) => setReviewText(e.target.value)}
                     />
                     <div className={styles.reviewActions}>
-                      <select
-                        className={styles.ratingSelect}
+                      <div className={styles.ratingControl}>
+                        <div className={styles.ratingHeader}>
+                          <label
+                            htmlFor="review-rating"
+                            className={styles.ratingLabel}
+                          >
+                            Your Rating
+                          </label>
+                          <div className={styles.ratingPreview}>
+                            <span className={styles.ratingValuePreview}>
+                              {reviewRating.toFixed(1)} / 5
+                            </span>
+                            <Rating value={reviewRating} size="small" />
+                          </div>
+                        </div>
+                        <input
+                          id="review-rating"
+                          type="range"
+                          min="0"
+                          max="5"
+                          step="0.1"
+                          className={styles.ratingSlider}
                         value={reviewRating}
-                        onChange={(e) =>
-                          setReviewRating(Number(e.target.value))
-                        }
-                      >
-                        <option value="5">5 Stars</option>
-                        <option value="4">4 Stars</option>
-                        <option value="3">3 Stars</option>
-                        <option value="2">2 Stars</option>
-                        <option value="1">1 Star</option>
-                      </select>
+                          onChange={(e) => handleRatingChange(e.target.value)}
+                        />
+                      </div>
                       <button type="submit" className={styles.submitBtn}>
                         Submit Review
                       </button>
