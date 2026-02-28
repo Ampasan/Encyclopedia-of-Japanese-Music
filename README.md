@@ -1,6 +1,6 @@
 # OtoBeats — Ensiklopedia Musik Jepang & Komunitas Fans
 
-OtoBeats adalah website modern bertema dark mode neon yang menjadi pusat informasi artis, album, konser, dan berita musik Jepang. Dibangun dengan React + TypeScript + Vite serta modular sehingga mudah dikembangkan.
+OtoBeats adalah website modern bertema dark mode neon yang menjadi pusat informasi artis, album, konser, dan berita musik Jepang. Dibangun dengan React + TypeScript serta modular sehingga mudah dikembangkan.
 
 ## Fitur Utama
 
